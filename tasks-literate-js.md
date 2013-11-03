@@ -1,5 +1,3 @@
-
-```js
 //foobar
 /*
  * grunt-literate
@@ -8,8 +6,6 @@
  * Copyright (c) 2013 Oleg Grenrus
  * Licensed under the BSD3 license.
  */
-```
-
 # grunt-literate
 
 > Generate docs from your source
@@ -69,7 +65,6 @@ Make a pull request, but don't commit `README.md`!
 
 This task could be abused to do literate programming.
 
-
 ```js
 "use strict";
 
@@ -96,4 +91,3 @@ module.exports = function(grunt) {
   });
 };
 ```
-

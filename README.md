@@ -1,3 +1,11 @@
+//foobar
+/*
+ * grunt-literate
+ * https://github.com/phadej/grunt-quotmark
+ *
+ * Copyright (c) 2013 Oleg Grenrus
+ * Licensed under the BSD3 license.
+ */
 # grunt-literate
 
 > Generate docs from your source
@@ -57,3 +65,29 @@ Make a pull request, but don't commit `README.md`!
 
 This task could be abused to do literate programming.
 
+```js
+"use strict";
+
+var literate = require("../lib/literate.js");
+var assert = require("assert");
+
+module.exports = function(grunt) {
+  grunt.registerMultiTask("literate", "Generate docs from your source", function() {
+    var options = this.options({
+      code: false,
+    });
+
+    this.files.forEach(function (f) {
+      assert(f.dest, "dest argument is required");
+      var content = "";
+
+      f.src.forEach(function (filename) {
+        content += literate(grunt.file.read(filename), options);
+      });
+
+      // Write file
+      grunt.file.write(f.dest, content);
+    });
+  });
+};
+```

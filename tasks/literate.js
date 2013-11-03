@@ -68,6 +68,7 @@ Make a pull request, but don't commit `README.md`!
 
 This task could be abused to do literate programming.
 
+```js
 */
 
 "use strict";
@@ -94,3 +95,7 @@ module.exports = function(grunt) {
     });
   });
 };
+
+/**
+  ```
+*/
